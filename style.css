@@ -680,3 +680,34 @@ footer {
         text-align: center;
     }
 }
+
+/* ==========================================
+   8. HEADER WHATSAPP INTERACTIVE BUTTON
+   ========================================== */
+header nav a.nav-whatsapp {
+    color: #ffffff; /* White text for contrast */
+    background-color: #25D366; /* Official WhatsApp Branding Green */
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 20px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Hover dynamic micro-interactions */
+header nav a.nav-whatsapp:hover {
+    background-color: #20BA56; /* Darkens slightly on hover */
+    color: #ffffff;
+}
+
+/* Ensure mobile header elements handle padding beautifully */
+@media (max-width: 768px) {
+    header nav a.nav-whatsapp {
+        margin-left: 0;
+        margin-top: 10px;
+        display: inline-block;
+    }
+}
