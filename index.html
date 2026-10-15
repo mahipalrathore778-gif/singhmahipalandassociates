@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singh Mahipal & Associates | Chartered Accountants</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+        <!-- Header Navigation -->
+    <!-- Header Navigation -->
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Firm Logo" class="firm-logo">
+            <div class="brand-text">
+                <h1 class="firm-name">Singh Mahipal & Associates</h1>
+                <span class="firm-subtitle">Chartered Accountants</span>
+            </div>
+        </div>
+        <nav>
+            <!-- Changed from # fragments to actual standalone file names -->
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="partners.html">Partners</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+
+
+
+    <!-- Hero Banner Segment -->
+       <!-- Hero Banner Segment -->
+    <section id="home" class="hero">
+        <!-- Automated Sliding Background Images Track -->
+        <div class="slider-background">
+            <!-- Save your images inside the project folder as bg1.jpg, bg2.jpg, bg3.jpg -->
+            <div class="slide bg-slide-1"></div>
+            <div class="slide bg-slide-2"></div>
+            <div class="slide bg-slide-3"></div>
+        </div>
+
+        <!-- Foreground Content Wrapper -->
+        <div class="hero-content">
+            <h1>Singh Mahipal & Associates welcomes you</h1>
+            <p>Professional Accounting, Taxation, & Advisory Services Firm based in Jaipur</p>
+            <p>FRN: 040228C</p>
+            
+        </div>
+    </section>
+    <!-- Main Content Area Right Below the Slider -->
+    <main class="main-content">
+
+             <!-- 1. About Us Section -->
+        <section id="about-us" class="content-section">
+            <div class="container-wide">
+                
+                <!-- Flexbox bounded block -->
+                <div class="about-wrapper">
+                    
+                    <!-- Left Column: Expanded horizontally to the left, height locked -->
+                    <div class="about-image-box">
+                        <img src="about-firm.jpg" alt="Our Practice Office" class="about-img">
+                    </div>
+                    
+                    <!-- Right Column: Text content box -->
+                    <div class="about-text-box">
+                        <h2 class="about-section-title">About Us</h2>
+                        <p>Established with a vision to deliver exceptional financial counsel, our firm provides robust auditing, taxation, and corporate advisory services. We blend deep regulatory expertise with customized problem-solving to help corporate enterprises and businesses navigate India's evolving economic landscape seamlessly.</p>
+                        <p>Built upon values of integrity, precision, and complete transparent accountability, our dedicated team ensures your corporate operations remain fully aligned with the latest legal frameworks, MCA directives, and financial guidelines.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+          <!-- 2. Our Services Section -->
+        <section id="our-services" class="content-section transparent-scroller">
+            <div class="container">
+                <h2 class="section-title white-text">Our Services</h2>
+                <div class="services-grid">
+                    <!-- NEW CARD ADDED HERE -->
+                    <div class="service-card">
+                        <h3>Accounting & Bookkeeping</h3>
+                        <p>End-to-end ledger maintenance, financial statements preparation, accounts receivable tracking, and regular balance sheet reconciliations.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Statutory & Internal Audit</h3>
+                        <p>Comprehensive evaluation of financial statements, corporate compliances, and internal control tracking systems.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Direct & Indirect Taxation</h3>
+                        <p>Expert processing of Income Tax filings, TDS management, GST compliances, and litigation representation procedures.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Corporate Secretarial Advisory</h3>
+                        <p>End-to-end support for MCA filings, ROC legal compliance obligations, and initial business setup advisory operations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- NEW: Newsletter & Updates Section (Solid White Ground Break) -->
+        <section id="newsletter-updates" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Newsletter & Updates</h2>
+                <div class="newsletter-wrapper">
+                    <p class="newsletter-text-dark">Stay informed with our curated financial insights. We regularly publish analytical breakdowns of structural tax modifications, union budget adjustments, and critical compliance timelines issued by the MCA and CBDT to keep your business ahead.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Enter your business email address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Get in Touch Section (Transparent Layout Layer sharing the same stable background) -->
+        <section id="get-in-touch" class="content-section transparent-scroller">
+            <div class="container">
+                <h2 class="section-title white-text">Get in Touch</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p><strong>Address:</strong> 07, Shri Ji Colony, Road No. 17, VKI Area, Jaipur, Rajasthan - 302013</p>
+                        <p><strong>Email:</strong> mahipalrathore778@gmail.com</p>
+                        <p><strong>Hours:</strong> Mon - Sat: 10:00 AM - 6:30 PM</p>
+                    </div>
+                  <form class="contact-form" id="firmContactForm">
+    <div class="form-group">
+        <!-- Added explicit 'name' fields so JavaScript can read the text -->
+        <input type="text" name="clientName" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+        <input type="email" name="clientEmail" placeholder="Your Email Address" required>
+    </div>
+    <div class="form-group">
+        <textarea name="clientMessage" placeholder="How can our firm assist you?" rows="4" required></textarea>
+    </div>
+    <!-- Reverted back to a true form button to trigger proper validation checks -->
+    <button type="button" class="submit-btn" onclick="sendMailInquiry()">Send Enquiry</button>
+</form>
+
+
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+     <!-- Compliance & Social Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Top Row: Navigation and External Links -->
+            <div class="footer-links">
+                <a href="https://www.icai.org/" target="_blank" rel="noopener">ICAI Website</a>
+                <a href="https://www.incometaxindia.gov.in/home" target="_blank" rel="noopener">Income Tax Website</a>
+                <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener">Income Tax E-Filing Portal</a>
+                <a href="https://www.gst.gov.in/" target="_blank" rel="noopener">GST Portal</a>
+                <a href="https://www.facebook.com/profile.php?id=61595264885797" target="_blank" rel="noopener">My Facebook Page</a>
+            </div>
+            
+            <!-- Bottom Row: Copyright and Compliance -->
+            <p>&copy; 2026 Singh Mahipal & Associates. All rights reserved.</p>
+            <p class="compliance">This website complies strictly with the 13th Edition of the ICAI Code of Ethics. Last Updated: October 2026.</p>
+        </div>
+    </footer>
+
+    <script>
+        function sendMailInquiry() {
+            // 1. Get the form element
+            var form = document.getElementById("firmContactForm");
+            
+            // 2. Extract values written by the visitor
+            var name = form.clientName.value.trim();
+            var email = form.clientEmail.value.trim();
+            var message = form.clientMessage.value.trim();
+            
+            // 3. Perform a quick check to ensure fields aren't completely empty
+            if(name === "" || email === "" || message === "") {
+                alert("Please fill in all the details before submitting.");
+                return;
+            }
+            
+            // 4. Construct the email address parameters cleanly
+            var targetEmail = "mahipalrathore778@gmail.com"; 
+            var subject = encodeURIComponent("New Web Consultation Request from " + name);
+            var bodyText = encodeURIComponent(
+                "Client Name: " + name + "\n" +
+                "Client Email: " + email + "\n\n" +
+                "Inquiry Details:\n" + message
+            );
+            
+            // 5. Fire the mail application window cleanly without form conflicts
+            window.location.href = "mailto:" + targetEmail + "?subject=" + subject + "&body=" + bodyText;
+        }
+    </script>
+
+
+</body>
+</html>

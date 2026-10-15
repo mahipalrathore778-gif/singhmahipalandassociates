@@ -1,0 +1,682 @@
+/* Core Structural Resets */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation Bar Styling */
+/* Navigation Bar Styling */
+/* Navigation Bar Framework */
+header {
+    background-color: #ffffff; /* White background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 10%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); /* Subtle shadow to separate header from page body */
+}
+
+/* Align Logo & Typography Side-by-Side */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Adjusts the logo height naturally next to stacked text lines */
+.firm-logo {
+    height: 48px; 
+    width: auto;
+    object-fit: contain;
+}
+
+/* Vertical Stack layout for Text Group */
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Core Title Settings */
+.firm-name {
+    font-family: 'Times New Roman', Times, serif; /* Times New Roman */
+    font-size: 30px; /* Font size 30 */
+    font-weight: 700;
+    color: #0B2545; /* Corporate navy color for sharp legibility on white */
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+/* Subtitle Stacked Directly Below Title */
+.firm-subtitle {
+    font-family: 'Times New Roman', Times, serif; /* Times New Roman */
+    font-size: 16px;
+    font-weight: 600;
+    color: #647C94; /* Professional gray-blue subtitle color */
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 2px;
+    line-height: 1;
+}
+
+/* Nav Link Color Correction for White Background */
+header nav a {
+    color: #134074; /* Dark blue links for excellent contrast on white */
+    text-decoration: none;
+    margin-left: 24px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+header nav a:hover {
+    color: #0B2545; /* Darkens navigation link slightly on hover */
+}
+
+
+/* Minimalist Hero Section */
+/* Full Screen Hero Section Parent Container */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Takes up 100% of the active desktop screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures sliding pictures don't create horizontal page scrolling */
+}
+
+/* Base Configuration for Sliding Background Layers */
+.slider-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Configuration for each sliding sheet */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Background size covers the entire desktop screen */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0; /* Hidden by default; controlled via keyframe opacity */
+    
+    /* Animation: slideLeftToRight lasts 24 seconds total, loops infinitely */
+    animation: slideLeftToRight 24s infinite ease-in-out; 
+}
+
+/* Image assignments with high contrast professional overlays */
+.bg-slide-1 {
+    background-image: linear-gradient(rgba(11, 37, 69, 0.75), rgba(11, 37, 69, 0.75)), url('bg1.jpg');
+    animation-delay: 0s;
+}
+
+.bg-slide-2 {
+    background-image: linear-gradient(rgba(11, 37, 69, 0.75), rgba(11, 37, 69, 0.75)), url('bg2.jpg');
+    animation-delay: 8s; /* Appears second */
+}
+
+.bg-slide-3 {
+    background-image: linear-gradient(rgba(11, 37, 69, 0.75), rgba(11, 37, 69, 0.75)), url('bg3.jpg');
+    animation-delay: 16s; /* Appears third */
+}
+
+/* Left-to-Right Entry and Exit Animation Logic */
+@keyframes slideLeftToRight {
+    0% {
+        opacity: 0;
+        transform: scale(1.05) translateX(-100%); /* Enters from the extreme left side */
+    }
+    4% {
+        opacity: 1;
+        transform: scale(1.05) translateX(0%); /* Snaps centered and settles down */
+    }
+    33.33% {
+        opacity: 1;
+        transform: scale(1) translateX(0%); /* Stays stationary for viewing time */
+    }
+    37.33% {
+        opacity: 0;
+        transform: scale(1) translateX(100%); /* Exits cleanly off to the right side */
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Text Content Overlay Framework */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Forces text to sit securely on top of the moving background images */
+    color: #ffffff;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #EEF4F8;
+}
+
+/* --- New Content Sections Structure --- */
+
+/* ==========================================
+   4. CONTENT SECTIONS (About, Services, Newsletter, Contact)
+   ========================================== */
+/* --- About Us Flexbox Bounded Wide Layout --- */
+.container-wide {
+    max-width: 1250px; /* Widened slightly to let the image push further left */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center; /* Centers items vertically instead of stretching them */
+    height: 340px; /* FIXED VERTICAL HEIGHT: Locks the height exactly to its previous size */
+    gap: 50px; 
+    margin: 0 auto;
+}
+
+/* Left Column: Widened     horizontally to 560px, but height is restricted by parent */
+.about-image-box {
+    flex: 0 0 660px; /* Widens the image box horizontally to fill the left empty space */
+    height: 100%; /* Fills the 340px parent height exactly */
+    position: relative;
+}
+
+.about-img {
+    width: 100%;
+    height: 100%; /* Stays locked to the 340px container height */
+    object-fit: cover; /* Crops the left/right sides naturally so it stays distortion-free */
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    display: block;
+}
+
+/* Right Column: Text block takes up remaining space and handles text neatly */
+.about-text-box {
+    flex: 1; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Keeps header and paragraphs centered within the locked height */
+}
+
+/* Bounded title layout settings */
+.about-section-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.2rem;
+    color: #0B2545;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 20px; 
+    position: relative;
+    padding-bottom: 12px;
+    display: inline-block;
+}
+
+.about-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #134074;
+}
+
+.about-text-box p {
+    font-size: 1.05rem;
+    color: #4A5568;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+    text-align: left;
+}
+
+.about-text-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Mobile Breakpoint Configuration */
+@media (max-width: 992px) {
+    .about-wrapper {
+        flex-direction: column;
+        align-items: center;
+        height: auto; /* Removes fixed height restriction on mobile screens */
+    }
+    .about-image-box {
+        flex: none;
+        width: 100%;
+        max-width: 600px;
+        height: 320px; /* Sets stable landscape depth for mobile layouts */
+        margin-bottom: 25px;
+    }
+    .about-section-title {
+        text-align: center;
+    }
+    .about-section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .about-text-box p {
+        text-align: center;
+    }
+}
+
+
+
+   .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.2rem;
+    color: #0B2545;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #134074;
+}
+
+/* Force titles to turn white over the dark transparent scroller image sections */
+.white-text {
+    color: #ffffff !important;
+}
+.white-text::after {
+    background-color: #ffffff !important;
+}
+
+.section-body p {
+    font-size: 1.1rem;
+    color: #4A5568;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+/* --- Shared Stable Background Parallax Engine --- */
+.transparent-scroller {
+    background-image: linear-gradient(rgba(11, 37, 69, 0.85), rgba(11, 37, 69, 0.85)), url('scroll-bg.jpg');
+    background-attachment: fixed; /* Keeps image perfectly stable/fixed while scrolling */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Services Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.95); /* Slight white opacity so cards pop visually */
+    padding: 35px 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #134074;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px); 
+}
+
+.service-card h3 {
+    color: #0B2545;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #5A6A85;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Newsletter Layout Structure (Dark text variant for white background) --- */
+.newsletter-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-text-dark {
+    color: #4A5568;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    flex: 1;
+    min-width: 280px;
+    padding: 14px 20px;
+    border: 1px solid #CBD5E1;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: #134074;
+}
+
+.newsletter-btn {
+    background-color: #134074;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+}
+
+.newsletter-btn:hover {
+    background-color: #0B2545;
+}
+
+/* --- Get in Touch Layout Structure (Adjusted contact card for transparency balance) --- */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+.contact-info {
+    background-color: rgba(11, 37, 69, 0.9); /* Subtle contrast match for transparency environment */
+    color: white;
+    padding: 40px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #EEF4F8;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #CBD5E1;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.95); /* High legibility background over background images */
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #134074;
+}
+
+/* Styled Button to behave exactly like the original full-width design block */
+.submit-btn {
+    background-color: #134074;
+    color: white !important;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: block; 
+    width: 100%; /* Spans full horizontal input row size */
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+    cursor: pointer;
+    
+    /* Native browser reset overrides to match original button layout */
+    border: none;
+    outline: none;
+    font-family: inherit; /* Inherits main body typography */
+    margin: 0;
+    line-height: normal;
+    -webkit-appearance: none; /* Strips mobile layout defaults */
+    appearance: none;
+}
+
+.submit-btn:hover {
+    background-color: #0B2545; /* Deeper corporate blue hover */
+}
+
+
+footer { 
+    background: #0B2545; 
+    color: #8DA9C4; 
+    text-align: center; 
+    padding: 30px; 
+    font-size: 0.9rem; 
+}
+
+.compliance { 
+    font-size: 0.75rem; 
+    color: #647C94; 
+    margin-top: 10px; 
+}
+
+
+/* ==========================================
+   5. FOOTER STYLING & EXTERNAL LINKS
+   ========================================== */
+footer { 
+    background: #0B2545; /* Deep Professional Corporate Blue */
+    color: #8DA9C4; 
+    text-align: center; 
+    padding: 40px 20px; 
+    font-size: 0.9rem; 
+    position: relative;
+    z-index: 3;
+}
+
+.footer-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Uniform spacing between link rows and copyright text */
+}
+
+/* External Link Alignment and Styling */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Horizontal space between the links */
+    margin-bottom: 5px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+/* Hover State for Links */
+.footer-links a:hover {
+    color: #EEF4F8;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle highlight behind link text on hover */
+}
+
+.compliance { 
+    font-size: 0.75rem; 
+    color: #647C94; 
+    margin-top: 5px; 
+}
+
+/* Stacks links vertically on tiny mobile screens */
+@media (max-width: 480px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* ==========================================
+   7. SINGLE PARTNER PASSPORT BOUNDED LAYOUT
+   ========================================== */
+.single-partner-container {
+    display: flex;
+    align-items: stretch; /* Forces right text box height to match left photo box exactly */
+    gap: 40px;
+    max-width: 950px;
+    margin: 40px auto 0 auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border-left: 5px solid #0B2545; /* Corporate Blue accent left margin line */
+}
+
+/* Left Column: Traditional Passport Size Constraints (approx 3.5 : 4.5 ratio) */
+.partner-passport-box {
+    flex: 0 0 210px; /* Locks horizontal width exactly to a neat passport size scale */
+    height: 270px;   /* Locks vertical height scale */
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.partner-passport-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops passport headshot seamlessly without squeezing dimensions */
+    display: block;
+}
+
+/* Right Column: Bounded details alignment */
+.partner-details-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers text layers between photo boundary limits */
+    overflow: hidden;
+}
+
+.partner-details-content h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color: #0B2545;
+    margin: 0 0 6px 0;
+}
+
+.partner-title-badge {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #134074;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.partner-details-content p {
+    font-size: 0.98rem;
+    color: #4A5568;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+    text-align: left;
+}
+
+.partner-details-content p:last-child {
+    margin-bottom: 0; /* Prevents text elements from pushing past the bottom line boundary */
+}
+
+/* Responsive view settings for tablets and mobile devices */
+@media (max-width: 768px) {
+    .single-partner-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto; /* Drops vertical sync layout restriction to let layout stack naturally */
+        padding: 20px;
+    }
+    .partner-passport-box {
+        flex: none;
+        margin-bottom: 20px;
+    }
+    .partner-details-content p {
+        text-align: center;
+    }
+}
